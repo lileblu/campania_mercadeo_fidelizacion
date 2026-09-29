@@ -1,0 +1,221 @@
+/* ===== Base ===== */
+:root {
+  --negro: #0d1117;
+  --azul: #1f4e8c;
+  --azul-claro: #5a9bd8;
+  --gris: #5b6b7d;
+  --suave: #d3d9e0;
+  --fondo: #e4e8ed;
+  --texto: #1c2430;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Lato", Arial, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: "Poppins", Arial, sans-serif; line-height: 1.2; color: var(--negro); }
+
+/* ===== Barra superior ===== */
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 6%;
+  background: var(--negro);
+}
+
+.logo {
+  font-family: "Poppins", Arial, sans-serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.barra nav a {
+  color: #c3ccd6;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.barra nav a:hover { color: var(--azul-claro); }
+
+/* ===== Portada ===== */
+.portada {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 70px 6%;
+}
+
+.portada h1 { font-size: 2.6rem; margin-bottom: 16px; }
+.portada p { font-size: 1.1rem; max-width: 52ch; margin-bottom: 26px; }
+
+.portada-img {
+  width: 100%;
+  height: auto; /* el logo es ancho: se muestra completo, sin recortar */
+  border-radius: 12px;
+}
+
+/* ===== Botón ===== */
+.botones { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.boton {
+  display: inline-block;
+  padding: 12px 26px;
+  font-family: "Poppins", Arial, sans-serif;
+  background: var(--azul);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boton:hover { background: #163a69; }
+
+/* Botón de viajes: negro con borde azul */
+.boton-viaje { background: var(--negro); box-shadow: inset 0 0 0 2px var(--azul-claro); }
+.boton-viaje:hover { background: #1c2733; }
+
+/* ===== Secciones ===== */
+.seccion { padding: 70px 6%; }
+.seccion h2 { font-size: 2rem; margin-bottom: 30px; }
+.fondo-suave { background: var(--suave); }
+
+/* ===== Imagen de envíos ===== */
+.banner-envios {
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center 55%; /* 0% = parte de arriba, 100% = parte de abajo; ajusta este valor */
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+/* ===== Servicios ===== */
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.servicios article {
+  padding: 24px;
+  border-left: 5px solid var(--azul);
+  background: var(--suave);
+}
+
+.servicios h3 { margin-bottom: 8px; }
+
+/* ===== Viajes ===== */
+.viajes { background: var(--negro); }
+.viajes h2, .viajes h3 { color: #fff; }
+.viajes .intro { color: #c3ccd6; margin: -14px 0 30px; max-width: 60ch; }
+.viajes .servicios article { background: rgba(22, 29, 39, 0.85); border-left-color: var(--azul-claro); }
+.viajes .servicios p { color: #c3ccd6; }
+.viajes .boton { margin-top: 32px; }
+
+/* ===== Pasos ===== */
+.pasos {
+  max-width: 700px;
+  padding-left: 22px;
+}
+
+.pasos li { margin-bottom: 14px; }
+
+/* ===== Formulario ===== */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 520px;
+}
+
+.formulario label { font-weight: 600; margin-top: 8px; }
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  padding: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #aab6c3;
+  border-radius: 6px;
+  background: #f1f3f6;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus,
+.boton:focus-visible,
+.barra a:focus-visible {
+  outline: 3px solid var(--azul-claro);
+  outline-offset: 2px;
+}
+
+.formulario .boton { margin-top: 16px; align-self: flex-start; }
+
+/* ===== Pie ===== */
+.pie {
+  padding: 24px 6%;
+  text-align: center;
+  color: #c3ccd6;
+  background: var(--negro);
+}
+
+/* ===== Redes sociales ===== */
+.redes-texto { margin: 40px 0 12px; font-weight: 700; }
+
+.boton svg, .redes-pie svg { width: 20px; height: 20px; vertical-align: -4px; margin-right: 8px; }
+
+.boton-wa { background: #1f7a5c; }
+.boton-wa:hover { background: #176048; }
+.boton-ig { background: var(--negro); }
+.boton-ig:hover { background: #1c2733; }
+
+.redes-pie { display: inline-block; margin-bottom: 10px; color: #fff; text-decoration: none; font-weight: 700; }
+.redes-pie:hover { color: var(--azul-claro); }
+
+.wa-flotante {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(13, 17, 23, 0.35);
+}
+
+.wa-flotante svg { width: 32px; height: 32px; }
+.wa-flotante:hover { background: #1ebe5b; }
+.wa-flotante:focus-visible { outline: 3px solid var(--azul-claro); outline-offset: 3px; }
+
+/* ===== Celular ===== */
+@media (max-width: 800px) {
+  .portada { grid-template-columns: 1fr; padding: 40px 6%; }
+  .portada h1 { font-size: 2rem; }
+    .banner-envios { height: 200px; }
+  .barra nav a { margin: 0 14px 0 0; }
+}
